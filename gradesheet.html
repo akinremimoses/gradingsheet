@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .div01 {
+            display: flex;
+            justify-content: center;
+            border: 3px solid;
+            border-color: black;
+            align-content: center;
+            border-radius: 15px;
+            padding: 20px;
+            width: 70%;
+            height: 200px;
+            background-color: rgb(0,203,204);
+        }
+        .div02 {
+            background-color: rgb(229,232,233) ;
+            width: 80%;
+            height: 200px;
+            border-radius: 15px;
+        
+        }
+        button {
+            height: 35px;
+            padding: 0px;
+            margin-top: 20px;
+            margin-left: 30px;
+            color: black;
+            width: 65%;
+            border-color: rgb(4, 138, 138);
+            border-radius: 15px;
+
+        }
+        input{
+            margin-top: 15px;
+            margin-left: 30px;
+            padding: 0px;
+            height: 30px;
+            width: 65%;
+            border-color: rgb(4, 138, 138);
+            border-radius: 15px;
+
+        }
+
+        #myScreen {
+            margin-top: 30px;
+            font-weight: bold;
+            border: 2px solid;
+            height: 30px;
+            background-color: white;
+            width: 65%;
+            margin-left: 30px;
+            border-color: rgb(4, 138, 138);
+            border-radius: 15px;
+        }
+        .type1{
+            margin-top: 50px;
+        }
+        .type2{
+            text-decoration-color: aliceblue;
+            font-weight: 700;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <!-- //<button onclick="TotalGrade">click me</button> -->
+    <div class="div01">
+        <div>
+            <!-- <h2>MAKINS</h2> -->
+            <h2 class="type1">Grading System</h2>
+            <p class="type2">A NEW GRADING SYSTEM DEVELOPED BY MAKINS</p>
+        </div>
+
+        <div class="div02">
+            <!-- <h2>Grading System</h2>
+            <p>THIS IS A NEW GRADING SYSTEM DEVELOPED BY ME</p> -->
+            
+            <form action="">
+                <label for="name"></label>
+                <input type="text" id="my_score" placeholder="enterRawScore">
+            </form>
+            <div id="myScreen" class="resultScreen"></div>
+            <button type="submit" onclick="submit()">GetGrade</button>
+            
+        </div>
+    </div>
+
+
+    <script>
+
+        function submit() {
+            // let resultInput = document.getElementById('my_score').value
+            let myResult = document.getElementById('my_score').value
+            let myScreen = document.getElementById('myScreen')
+
+
+            // let grade = "A, B, C, D, E, F";
+            if (myResult >= 70 && myResult <= 100) {
+                myScreen.innerHTML = '<p>Your grade : A<p>'
+                myScreen.style.color = 'green'
+            }
+            else if (myResult >= 60 && myResult <= 69) {
+                myScreen.innerHTML = '<p> Your grade is B<p>'
+                myScreen.style.color = 'green'
+            }
+            else if (myResult >= 50 && myResult <= 59) {
+                myScreen.innerHTML = '<p>Your grade is C<p>'
+                myScreen.style.color = 'green'
+            }
+            else if (myResult >= 45 && myResult <= 49) {
+                myScreen.innerHTML = '<p>Your grade is D<p>'
+                myScreen.style.color = 'blue'
+            }
+            else if (myResult >= 40 && myResult <= 44) {
+                myScreen.innerHTML = '<p>Your grade is E<p>'
+                myScreen.style.color = 'blue'
+            }
+            else {
+                myScreen.innerHTML = '<p>Your grade is F<p>'
+                myScreen.style.color = 'red'
+            }
+
+            // //valid and invalid
+            // if (myResult > 100 || myResult < 0) {
+            //     myScreen.innerHTML = '<p>INVALID<p>'
+            //     myScreen.style.color = 'red'
+            // }
+
+            // else {
+            //     myScreen.innerHTML = '<p>Your grade is VALID<p>'
+            //     myScreen.style.color = 'green'
+            // }
+
+            //empty result or not
+            if (myResult === "") {
+                myScreen.innerHTML = "INPUT A VALUE"
+            }
+
+            
+        }
+
+
+
+    </script>
+</body>
+
+</html>
